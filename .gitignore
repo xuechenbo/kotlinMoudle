@@ -1,0 +1,13 @@
+#*忽略文件
+
+*.iml
+*.svn
+.gradle
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild

@@ -1,0 +1,90 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+//插件绑定视图  kotlin-android-extensions
+//在 Kotlin 中则需要添加 kotlin-kapt 插件激活 kapt，并使用 kapt 替换 annotationProcessor：
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        multiDexEnabled = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        flavorDimensions "versionCode"
+
+        //Arouter路由配置
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file(KEY_PATH)
+            keyAlias ALIAS_NAME
+            keyPassword KEY_PASS
+            storePassword ALIAS_PASS
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt', 'bqs-proguard-rules.pro'
+            signingConfig signingConfigs.release//签名
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt', 'bqs-proguard-rules.pro'
+            signingConfig signingConfigs.release//签名
+        }
+        applicationVariants.all { variant ->
+            variant.outputs.all {
+                if (variant.name.endsWith("release")) {
+                    outputFileName = "kotlin.apk"
+                }
+            }
+        }
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation project(':common_base')
+    if (!Boolean.valueOf(rootProject.ext.isModule)) {
+        //登录模块
+        implementation project(':loginMoudle')
+        implementation project(':wkykPayMoudle')
+        implementation project(':shareMoudle')
+    }
+    //Arouter路由
+    kapt rootProject.ext.dependencies["arouterCompiler"]
+}

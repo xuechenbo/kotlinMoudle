@@ -1,0 +1,6 @@
+include ':pluggablemoudle'
+include ':shareMoudle'
+include ':wkykPayMoudle'
+include ':loginMoudle'
+include ':common_base'
+include ':app'
