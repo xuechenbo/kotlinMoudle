@@ -6,5 +6,10 @@
         <activity android:name=".ui.BankCardListActivity" />
         <activity android:name=".ui.PayRecordListActivity" />
         <activity android:name=".ui.YKchannelActivity" />
+        <activity android:name=".ui.MakePlanDesActivity" />
+        <activity android:name=".ui.ChangeAreaActivity" />
+        <activity android:name=".ui.PreviewDetailActivity" />
+        <activity android:name=".ui.LookPlanActivity" />
+        <activity android:name=".ui.PlanDetailActivity" />
     </application>
 </manifest>

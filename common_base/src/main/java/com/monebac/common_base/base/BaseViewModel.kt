@@ -22,6 +22,7 @@ typealias Cancel = suspend (Exception) -> Unit
 
 open class BaseViewModel : ViewModel() {
     val loading: MutableLiveData<Boolean> = MutableLiveData()
+    val tipString: MutableLiveData<String> = MutableLiveData()
 
     val resultRepository by lazy {
         ResultRepository()

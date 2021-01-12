@@ -1,8 +1,10 @@
 package com.monebac.common_base.base
 
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.alibaba.android.arouter.launcher.ARouter
+import org.jetbrains.anko.toast
 
 abstract class BaseVmActivity<VM : BaseViewModel> : BaseActivity() {
 
@@ -32,9 +34,10 @@ abstract class BaseVmActivity<VM : BaseViewModel> : BaseActivity() {
     abstract fun initData()
 
     open fun observe() {
-//        mViewModel.loading.observe(this, Observer {
-//            if (it) showProgressDialog(R.string.loading) else dismissProgressDialog()
-//        })
+        mViewModel.tipString.observe(this, Observer {
+            if (it == "00") "" else toast(it)
+
+        })
     }
 
     protected fun setCustomToolBar(

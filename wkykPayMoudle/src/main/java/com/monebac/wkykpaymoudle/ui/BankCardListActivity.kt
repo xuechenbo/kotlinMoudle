@@ -75,7 +75,7 @@ class BankCardListActivity : BaseVmActivity<BankCardViewModel>() {
                         else
                             toast("有计划执行中...")
                     }
-//                    R.id.tv_look_plan -> startActivity<LookPlanActivity>("BindCard_Class" to data)
+                    R.id.tv_look_plan -> startActivity<LookPlanActivity>("BindCard_Class" to data)
                 }
             }
             setOnItemClickListener { _, _, _ ->

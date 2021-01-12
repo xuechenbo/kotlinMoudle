@@ -102,7 +102,8 @@ dependencies {
 
     api rootProject.ext.dependencies["multidex"]
 
-    api rootProject.ext.dependencies["kotlinx_coroutines_android"]
+//    api rootProject.ext.dependencies["kotlinx_coroutines_android"]
+    api rootProject.ext.dependencies["kotlinx_coroutines_core"]
     api rootProject.ext.dependencies["extensions"]
     api rootProject.ext.dependencies["lifecycle_viewmodel_ktx"]
     api rootProject.ext.dependencies["navigation_fragment_ktx"]
@@ -118,6 +119,14 @@ dependencies {
     //阿里ARouter
     api rootProject.ext.dependencies["arouter"]
     kapt rootProject.ext.dependencies["arouterCompiler"]
+
+    //友盟
+    api rootProject.ext.dependencies["umsdk_common"]
+    api rootProject.ext.dependencies["umsdk_asms"]
+    api rootProject.ext.dependencies["umsdk_core"]
+    api rootProject.ext.dependencies["umsdk_board"]
+//    api rootProject.ext.dependencies["umsdk_qq"]
+    api rootProject.ext.dependencies["umsdk_wx"]
 
 
 }

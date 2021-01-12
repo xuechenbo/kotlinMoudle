@@ -45,11 +45,10 @@ class YKchannelActivity : BaseVmActivity<YKchannelViewModel>() {
                         if (acqData.status == "未开通")
                             mViewModel.getChannelStatus(initCard(acqData.acqcode))
                         else
-                            toast("制定计划")
-//                            startActivity<MakePlanDesActivity>(
-//                                    "BindCard_Class" to bindCard,
-//                                    "acqCode" to acqData.acqcode,
-//                                    "acqName" to acqData.channelName)
+                            startActivity<MakePlanDesActivity>(
+                                    "BindCard_Class" to bindCard,
+                                    "acqCode" to acqData.acqcode,
+                                    "acqName" to acqData.channelName)
                     R.id.tv_remark ->
                         toast("查看限额图")
 //                        startActivity<ShowImageActivity>()
@@ -86,6 +85,7 @@ class YKchannelActivity : BaseVmActivity<YKchannelViewModel>() {
             })
         }
     }
+
 
     private fun initCard(acqcode: String): MutableMap<String, String> =
             getMap(mutableMapOf(

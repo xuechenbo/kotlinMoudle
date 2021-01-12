@@ -37,7 +37,6 @@ android {
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     api project(':common_base')
-    api rootProject.ext.dependencies["kotlinx_coroutines_android"]
     //Arouter路由
     kapt rootProject.ext.dependencies["arouterCompiler"]
 }

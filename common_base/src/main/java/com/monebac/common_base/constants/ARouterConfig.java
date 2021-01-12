@@ -6,11 +6,14 @@ package com.monebac.common_base.constants;
 public interface ARouterConfig {
 
     //************************************登录模块*****************************************/
-
     String LOGIN_MOUDLE = "/login/LoginActivity";
+
 
     //************************************养卡模块*****************************************/
     String WKYK_MOUDLE = "/wkyk/BankCardlistActivity";
 
+
+    //************************************分享模块*****************************************/
+    String SHARE_MOUDLE = "/share/ShareActivity";
 
 }

@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.multidex.MultiDex
 import com.alibaba.android.arouter.launcher.ARouter
 import com.monebac.common_base.BuildConfig
+import com.umeng.commonsdk.UMConfigure
 
 open class BaseApplication : Application() {
     companion object {
@@ -23,6 +24,13 @@ open class BaseApplication : Application() {
         super.onCreate()
         //初始化ARouter
         initARouter()
+        initUM()
+    }
+
+    private fun initUM() {
+        UMConfigure.init(this, "5ff566ddadb42d5826a069bf"
+                , "umeng", UMConfigure.DEVICE_TYPE_PHONE, "")
+
     }
 
 

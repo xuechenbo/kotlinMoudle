@@ -14,6 +14,12 @@ class RegistActivity : BaseVmActivity<RegistViewModel>() {
 
     override fun layoutRes() = R.layout.activity_regitser
 
+    //388+388+90=866
+    //488+488+488+488+135=2087
+    //433
+    //488+488+45==1021====588
+
+
     override fun initView() {
         tv_title.text = "注册"
     }
