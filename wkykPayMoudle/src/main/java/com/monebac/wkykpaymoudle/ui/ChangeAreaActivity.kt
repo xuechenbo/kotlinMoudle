@@ -21,6 +21,8 @@ class ChangeAreaActivity : BaseVmActivity<ChangeAreaViewModel>() {
     private lateinit var mList: List<AreaModel>
     var seleType = true
 
+
+
     override fun layoutRes(): Int = R.layout.act_change_area
 
     override fun viewModelClass(): Class<ChangeAreaViewModel> = ChangeAreaViewModel::class.java
