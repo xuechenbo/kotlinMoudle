@@ -121,12 +121,12 @@ dependencies {
     kapt rootProject.ext.dependencies["arouterCompiler"]
 
     //友盟
-    api rootProject.ext.dependencies["umsdk_common"]
-    api rootProject.ext.dependencies["umsdk_asms"]
-    api rootProject.ext.dependencies["umsdk_core"]
-    api rootProject.ext.dependencies["umsdk_board"]
+//    api rootProject.ext.dependencies["umsdk_common"]
+//    api rootProject.ext.dependencies["umsdk_asms"]
+//    api rootProject.ext.dependencies["umsdk_core"]
+//    api rootProject.ext.dependencies["umsdk_board"]
 //    api rootProject.ext.dependencies["umsdk_qq"]
-    api rootProject.ext.dependencies["umsdk_wx"]
+//    api rootProject.ext.dependencies["umsdk_wx"]
 
 
 }
