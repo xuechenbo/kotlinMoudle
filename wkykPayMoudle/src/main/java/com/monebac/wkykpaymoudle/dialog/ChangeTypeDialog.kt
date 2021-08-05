@@ -80,16 +80,6 @@ class ChangeTypeDialog : DialogFragment() {
             mListener?.invoke(selectItem)
             dialog!!.dismiss()
         }
-
-        //38400+70200
-        //1 2 3 4 5 6 7 8 9 10 11 12
-        //9200*12===110400
-        //1475*12=17700
-        //1500*12=18000
-        //2000
-        //37700
-        //72700+110000===180000------2500-------2000-------1500====170000
-
     }
 
 
@@ -118,4 +108,6 @@ class ChangeTypeDialog : DialogFragment() {
     fun setOnClickListener(listener: (String, String) -> Unit) {
         list = listener
     }
+
+
 }

@@ -9,6 +9,7 @@ class BankCardViewModel : BaseViewModel() {
     override fun onCleared() {
         super.onCleared()
     }
+
     val bankList = MutableLiveData<List<BindCard>>()
 
     fun getBankList(map: MutableMap<String, String>) {
@@ -20,6 +21,9 @@ class BankCardViewModel : BaseViewModel() {
                         bankList.value = getList(result.str57)
                     }
                     loading.value = false
+                },
+                error = {
+
                 }
         )
     }

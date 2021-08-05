@@ -4,13 +4,15 @@ import java.security.MessageDigest
 
 class Constant {
     companion object {
+        var mainNum = 0
         val mainKey = "21E4ACD4CD5D4619B063F40C5A454F7D"
         val BASE_IP = "http://chengxinshenghuo.llyzf.cn"
         val BASE_URL = "$BASE_IP:80"
         val REQUEST_API = "$BASE_URL/lly-posp-proxy/request.app?"
         val RETROFIT_URL = "$BASE_IP:80/lly-posp-proxy/"
         val VERSION = "CXSH-A-1.0.1"
-//
+
+        //
         fun Md5(str: String): String {
             val digest = MessageDigest.getInstance("MD5")
             val result = digest.digest(str.toByteArray())

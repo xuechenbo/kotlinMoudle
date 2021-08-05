@@ -6,10 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.monebac.common_base.network.ApiException
 import com.monebac.common_base.network.ResultRepository
 import com.monebac.common_base.utils.showToast
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import org.json.JSONException
 import retrofit2.HttpException
 import java.net.ConnectException
@@ -19,6 +16,7 @@ import java.net.UnknownHostException
 typealias Block<T> = suspend (CoroutineScope) -> T
 typealias Error = suspend (Exception) -> Unit
 typealias Cancel = suspend (Exception) -> Unit
+
 
 open class BaseViewModel : ViewModel() {
     val loading: MutableLiveData<Boolean> = MutableLiveData()
@@ -36,12 +34,7 @@ open class BaseViewModel : ViewModel() {
      * @param showErrorToast 是否弹出错误吐司
      * @return Job
      */
-    protected fun launch(
-            block: Block<Unit>,
-            error: Error? = null,
-            cancel: Cancel? = null,
-            showErrorToast: Boolean = true
-    ): Job {
+    protected fun launch(block: Block<Unit>, error: Error? = null, cancel: Cancel? = null, showErrorToast: Boolean = true): Job {
         return viewModelScope.launch {
             try {
                 block.invoke(this)
@@ -64,9 +57,9 @@ open class BaseViewModel : ViewModel() {
      * @param block 协程中执行
      * @return Deferred<T>
      */
-//    protected fun <T> async(block: Block<T>): Deferred<T> {
-//        return viewModelScope.async { block.invoke(this) }
-//    }
+    protected fun <T> async(block: Block<T>): Deferred<T> {
+        return viewModelScope.async { block.invoke(this) }
+    }
 
     /**
      * 取消协程
