@@ -39,6 +39,10 @@ android {
         javaMaxHeapSize "4g"
     }
 
+//    kotlinOptions {
+//        jvmTarget = "1.8"
+//    }
+
 }
 
 dependencies {
@@ -127,6 +131,9 @@ dependencies {
 //    api rootProject.ext.dependencies["umsdk_board"]
 //    api rootProject.ext.dependencies["umsdk_qq"]
 //    api rootProject.ext.dependencies["umsdk_wx"]
+
+//    api rootProject.ext.dependencies["coil"]
+//    api rootProject.ext.dependencies["coil_base"]
 
 
 }

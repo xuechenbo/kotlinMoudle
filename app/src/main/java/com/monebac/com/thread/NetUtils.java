@@ -21,17 +21,18 @@ public class NetUtils {
         okHttpClient.newCall(build).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.e("失败", "失败:" + e.getMessage());
+
             }
 
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String str = response.body().string();
-                Log.e("成功", "onResponse: " + str);
+                toJson(str);
             }
         });
     }
 
-    //
+    public static void toJson(String strContent){
 
+    }
 }

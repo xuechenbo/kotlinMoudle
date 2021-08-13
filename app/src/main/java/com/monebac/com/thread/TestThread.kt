@@ -35,8 +35,6 @@ internal class TestThread : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun initData() {
-
-
         handlerThread = HandlerThread("thread1")
         handlerThread.start()
         handler = Handler(handlerThread.looper)
@@ -208,15 +206,23 @@ internal class TestThread : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+    /**
+     * 进行一个普通的
+     * 5000W,
+     *
+     */
+
 
     /**********************************************************************************/
 
 
-    /******************* Thread+Runnable***********************************/
+    /******************* Thread+Runnable ***********************************/
     /**
      * 内部原理 = Thread类 + Handler类机制
      * 通过继承Thread类，快速地创建1个带有Looper对象的新工作线程\
      * 通过封装Handler类，快速创建Handler & 与其他线程进行通信
+     *
+     *
      */
     var mNum = 0
     private val runnable = object : Runnable {
@@ -291,5 +297,16 @@ internal class TestThread : AppCompatActivity(), View.OnClickListener {
 
     /**********************************************************************************/
 
+
+    /**
+     *
+     * R7000P活动价6399,Y7000P活动价6699
+     * R7 5800H+RTX3060 6GB+16GB内存+512GB SSD  R7000P 2021售价：7999 首发价格  7499
+     * R7000 2021:
+     * R5-5600H 版本预售价6300，  R7-5800H版本预售价6700
+     * 47600  67900 ==115500  +  78400==193900-6000-4500-2000-8000
+     * 11200* 7 8 9 10 11 12 13 =====  -6个月生活-房租-车费
+     *
+     */
 
 }

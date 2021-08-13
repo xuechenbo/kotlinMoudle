@@ -20,13 +20,26 @@
         </activity>
 
         <activity android:name=".thread.TestThread">
+
+        </activity>
+
+
+        <activity android:name=".coils.TestCoilActivity">
+
+        </activity>
+
+
+        <activity android:name=".recycler.MyExpendListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
     </application>
+
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
